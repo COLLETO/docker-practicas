@@ -1,0 +1,7 @@
+Practica#3 git:(main) ✗ history | grep mysql
+
+ 1191  docker run -d --name practica1-db mysql:latest\n
+ 1192  docker run -d --name practica-db mysql:latest\n
+ 1393* docker exec -it db-LUIS_FERNANDEZ mysql -u root -p\n
+ 1402  docker exec -it db-LUIS_FERNANDEZ mysql -u root -p\n
+ 1409  awk -v t="$(date +%s)" '{\n  split($0,a,"[:;]");\n  if (a[2] >= t-10800 && ($0 ~ /docker|mysql/))\n    sub(/^: [0-9]+:[0-9]+;/,"");\n    print\n}' ~/.zsh_history > commands.txt\n

@@ -1,0 +1,1849 @@
+: 1784789038:0;curl https://raw.githubusercontent.com/cachac/azure-labs/main/script.sh | sh"
+: 1784789038:0;curl https://raw.githubusercontent.com/cachac/azure-labs/main/script.sh | sh 
+: 1784789038:0;systemctl status code-server@azureuser
+: 1784789038:0;sudo systemctl status code-server@azureuser
+: 1784789038:0;sudo systemctl status code-server@student
+: 1784789038:0;ls -la
+: 1784789038:0;cd .config
+: 1784789038:0;vim code-server
+: 1784789038:0;cd code-server
+: 1784789038:0;ls
+: 1784789038:0;mkdir -p ~/.config/code-server && echo -e "bind-addr: 0.0.0.0:3030\nauth: password\npassword: teradyne > ~/.config/code-server/config.yaml
+: 1784789038:0;cat config.yaml
+: 1784789038:0;echo -e "bind-addr: 0.0.0.0:3030\nauth: password\npassword: teradyne > ~/.config/code-server/config.yaml
+: 1784789038:0;mkdir -p ~/.config/code-server && echo -e "bind-addr: 0.0.0.0:3030\nauth: password\npassword: teradyne" > ~/.config/code-server/config.yaml
+: 1784789038:0;systemctl restart code-server@student
+: 1784777275:0;sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"\
+\
+
+: 1784777299:0;bash
+: 1785172552:0;sudo apt update\
+curl -fsSL https://get.docker.com -o get-docker.sh\
+sudo sh get-docker.sh\
+\
+sudo usermod -aG docker $USER\
+newgrp docker
+: 1785172605:0;[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64\
+chmod +x ./kind\
+sudo mv ./kind /usr/local/bin/kind\
+\
+kind version
+: 1785172620:0;sudo snap install kubectl --classic
+: 1785172688:0;curl https://raw.githubusercontent.com/cachac/azure-labs/main/scr
+: 1785172727:0;pw
+: 1785172728:0;pwd
+: 1785172730:0;ls
+: 1785172736:0;cd ..
+: 1785172737:0;ls
+: 1785172740:0;cd student
+: 1785172792:0;ls
+: 1785172795:0;pwd
+: 1785172943:0;ifconfig
+: 1785172946:0;ip
+: 1785172957:0;ip address
+: 1785172989:0;ping 207.231.108.76
+: 1785173129:0;ping https://vm.storylabs.dev/vm1/
+: 1785173137:0;ping vm.storylabs.dev/vm1/
+: 1785173167:0;ping https://vm.storylabs.dev/vm1
+: 1785173876:0;ping 207.231.108.76
+: 1785173989:0;ls
+: 1785174103:0;kind create cluster --config kind-cluster.yaml\
+\
+kubectl cluster-info --context kind-demo
+: 1785174118:0;clear
+: 1785174137:0;kind create cluster --config kind-cluster.yaml
+: 1785174164:0;clear
+: 1785174182:0;sudo apt update\
+
+: 1785174202:0;curl -fsSL https://get.docker.com -o get-docker.sh
+: 1785174213:0;sudo sh get-docker.sh
+: 1785174236:0;sudo usermod -aG docker $USER
+: 1785174245:0;newgrp docker
+: 1785174258:0;[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64\
+chmod +x ./kind\
+sudo mv ./kind /usr/local/bin/kind
+: 1785174268:0;kind version\
+
+: 1785174275:0;sudo snap install kubectl --classic
+: 1785174315:0;kind create cluster --config kind-cluster.yaml
+: 1785174385:0;kubectl cluster-info --context kind-demo
+: 1785174997:0;curl icanhazip.com
+: 1785175049:0;hostname -I 
+: 1785175111:0;curl ifconfig.me
+: 1785175159:0;ip address
+: 1785175189:0;clear
+: 1785175195:0;kind create cluster --config kind-cluster.yaml
+: 1785175201:0;kubectl cluster-info --context kind-demo
+: 1785175277:0;kubectl get nodes
+: 1785175350:0;htop
+: 1785175369:0;kill -9 9290 9289
+: 1785175374:0;sudo kill -9 9290 9289
+: 1785175380:0;htop 
+: 1785175419:0;sudo reboot -h now
+: 1785175448:0;sudo shutdown -r now
+: 1785175485:0;htop
+: 1785175636:0;kubectl cluster-info --context kind-demo
+: 1785177015:0;ls
+: 1785177018:0;cd ..
+: 1785177019:0;ls
+: 1785177021:0;ls -a
+: 1785177042:0;cd student
+: 1785177043:0;ls
+: 1785177059:0;ls -a 
+: 1785177065:0;.kube
+: 1785177073:0;cd. .
+: 1785177074:0;cd ..
+: 1785177184:0;vi
+: 1785177192:0;vim .config
+: 1785178580:0;ls
+: 1785178611:0;git clone https://github.com/cachac/kubelabs.git
+: 1785344629:0;ls 
+: 1785344681:0;ls
+: 1785344689:0;pwd
+: 1785345694:0;cd kubelabs
+: 1785345699:0;ls
+: 1785345710:0;kubectl get nodes
+: 1785345756:0;kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+: 1785347080:0;kubectl wait --namespace ingress-nginx \\
+  --for=condition=ready pod \\
+  --selector=app.kubernetes.io/component=controller \\
+  --timeout=90s
+: 1785347140:0;kubectl get ns
+: 1785347153:0;kubectl get pods -n ingress-nginx -o wide
+: 1785347186:0;kubectl patch deployment ingress-nginx-controller \\
+  -n ingress-nginx \\
+  --type='json' \\
+  -p='[{"op": "add", "path": "/spec/template/spec/nodeSelector", "value": {"kubernetes.io/hostname": "demo-control-plane"}}]'
+: 1785347189:0;kubectl get pods -n ingress-nginx -o wide
+: 1785350139:0;kubectl -f apply ingress.yml
+: 1785350155:0;kubectl apply -f ingress.yml
+: 1785350158:0;ls
+: 1785350166:0;cd labs/networking
+: 1785350169:0;kubectl apply -f ingress.yml
+: 1785350222:0;kubectl apply -f ingress-svc.yml
+: 1785350250:0;kubectl apply -f ingress-deploy.yml
+: 1785350260:0;kubectl  get pods
+: 1785350282:0;kubectl describe svc svc-kube-1
+: 1785350367:0;kubectl get ingress
+: 1785350463:0;kubectl describe ingress http-ingress
+: 1785350611:0;kubectl apply -f ingress.yml
+: 1785350613:0;kubectl describe ingress http-ingress
+: 1785350985:0;kubectl delete -f ingress.yml
+: 1785350996:0;kubectl delete all --all
+: 1785351404:0;la
+: 1785351405:0;ls
+: 1785351410:0;cd practica
+: 1785351416:0;kubectl get nodes
+: 1785351437:0;kubectl apply -f demo-ingress.yml
+: 1785351446:0;kubectl apply -f demo-svc.yml
+: 1785351451:0;kubectl apply -f demo-deploy.yml
+: 1785351704:0;kubectl describe ingress http-ingress
+: 1785351729:0;kubectl apply -f demo-ingress.yml
+: 1785351733:0;kubectl apply -f demo-svc.yml
+: 1785351736:0;kubectl apply -f demo-deploy.yml
+: 1785351754:0;kubectl describe ingress http-ingress
+: 1785352184:0;kubectl apply -f demo-deploy.yml
+: 1785352188:0;kubectl apply -f demo-svc.yml
+: 1785352191:0;kubectl apply -f demo-ingress.yml
+: 1785352196:0;kubectl get pods
+: 1785352232:0;kubectl describe ingress http-ingress
+: 1785352296:0;kubectl describe svc demo-svc
+: 1785352471:0;kubectl apply -f demo-deploy.yml
+: 1785352474:0;kubectl apply -f demo-svc.yml
+: 1785352477:0;kubectl apply -f demo-ingress.yml
+: 1785352480:0;kubectl describe svc demo-svc
+: 1785352488:0;kubectl describe ingress http-ingress
+: 1785352529:0;kubectl delete all --all
+: 1785352532:0;cleart
+: 1785352534:0;clear
+: 1785352549:0;kubectl apply -f demo-deploy.yml
+: 1785352553:0;kubectl describe svc demo-svc
+: 1785352558:0;kubectl apply -f demo-ingress.yml
+: 1785352604:0;kubectl delete all --all
+: 1785352608:0;clear
+: 1785352622:0;kubectl apply -f demo-ingress.yml
+: 1785352724:0;kubectl get ingress
+: 1785352745:0;kubectl delete ingress http-ingress
+: 1785352748:0;clea
+: 1785352751:0;clear
+: 1785352773:0;kubectl apply -f demo-ingress.yml
+: 1785352783:0;kubectl apply -f demo-svc.yml
+: 1785352787:0;kubectl apply -f demo-deploy.yml
+: 1785352919:0;kubectl apply -f demo-svc.yml
+: 1785352923:0;kubectl apply -f demo-ingress.yml
+: 1785352947:0;kubectl apply -f .
+: 1785777983:0;ls
+: 1785777986:0;cd ..
+: 1785777990:0;cd bases
+: 1785777991:0;ls
+: 1785778173:0;docker build -t dockerlab:latest .
+: 1785778438:0;docker images
+: 1785778934:0;docker run -d --name website -p 8080:80
+: 1785778971:0;docker run -d --name website -p 8080:80 dockerlab
+: 1785779007:0;docker ps
+: 1785779478:0;docker logs website
+: 1785781387:0;docker build -t dockerlab:latest .
+: 1785781480:0;docker ps
+: 1785781500:0;docker stop website
+: 1785781519:0;docker build -t dockerlab:latest .
+: 1785781551:0;docker run -d --name website -p 8080:80 dockerlab
+: 1785781629:0;docker rm website
+: 1785781635:0;docker run -d --name website -p 8080:80 dockerlab
+: 1785781760:0;docker rm website
+: 1785781773:0;docker stop website
+: 1785781794:0;docker rm website
+: 1785781900:0;docker build -t dockerlab:latest .
+: 1785781906:0;docker run -d --name website -p 8080:80 dockerlab
+: 1785782217:0;docker login
+: 1785782253:0;docker images
+: 1785782296:0;docker tag dockerlab:latest ksteve17/dockerlab-agosto:1.0
+: 1785782301:0;docker images
+: 1785782370:0;docker push ksteve17/dockerlab-agosto:1.0
+: 1785782846:0;docker images
+: 1785782851:0;docker ps
+: 1785782882:0;docker rm -f website
+: 1785782922:0;docker rmi -f 635a57935218
+: 1785782969:0;docker images
+: 1785783002:0;docker rmi -f 2ba04e716692 2ba04e716692
+: 1785783004:0;docker images
+: 1785783418:0;kubectl apply -f .
+: 1785783571:0;kubectl delete .
+: 1785783602:0;kubectl get ingress
+: 1785783614:0;kubectl delete bases-
+: 1785783621:0;kubectl delete bases-ingress
+: 1785783630:0;kubectl delete ingress bases-ingress
+: 1785783681:0;kubectl delete ingress demo-ingress
+: 1785783688:0;kubectl apply -f .
+: 1785783725:0;kubectl delete ingress bases-ingress
+: 1785783745:0;kubectl delete -f bases-deploy.yml
+: 1785783751:0;kubectl delete -f bases-svc.yml
+: 1785783755:0;kubectl apply -f .
+: 1785783878:0;kubectl delete -f bases-svc.yml
+: 1785783883:0;kubectl delete -f bases-deploy.yml
+: 1785783891:0;kubectl delete -f bases-ingress.yml
+: 1785783896:0;kubectl delete ingress bases-ingress
+: 1785783899:0;kubectl apply -f .
+: 1785784001:0;kubectl delete -f bases-svc.yml
+: 1785784004:0;kubectl delete ingress bases-ingress
+: 1785784009:0;kubectl apply -f .
+: 1785784069:0;clear
+: 1785784080:0;kubectl get pods
+: 1785784090:0;kubectl apply -f .
+: 1785784124:0;kubectl describe svc bases-svc
+: 1785784184:0;kubectl apply -f .
+: 1785950501:0;clear
+: 1785950533:0;cd ..
+: 1785950536:0;cd hpa
+: 1785950539:0;kubectl get pods -n kube-system -l k8s-app=metrics-server
+: 1785950600:0;kubectl apply -f ../kubelabs/assets/kind-hpa-components/components.yaml
+: 1785950623:0;kubectl apply -f ../../kubelabs/assets/kind-hpa-components/components.yaml
+: 1785950627:0;pwd
+: 1785950631:0;cd ..
+: 1785950633:0;pwd
+: 1785950638:0;kubectl apply -f ../kubelabs/assets/kind-hpa-components/components.yaml
+: 1785950669:0;kubectl apply -f ../assets/kind-hpa-components/components.yaml
+: 1785950680:0;kubectl get pods -n kube-system -l k8s-app=metrics-server
+: 1785950686:0;htop
+: 1785950726:0;kubectl top pods -n kube-system
+: 1785950768:0;cd hpa 
+: 1785950772:0;ls 
+: 1785950792:0;kubectl top nodes
+: 1785950820:0;kubectl create namespace hpa-demo
+: 1785950886:0;kubectl apply -f hpa-deploy.yaml
+: 1785950895:0;kubectl apply -f hpa-deploy.yml
+: 1785950904:0;kubectl get pods -n hpa-demo -l app=hpa-demo
+: 1785951010:0;kubectl apply -f hpa-svc.yaml
+: 1785951018:0;kubectl apply -f hpa-svc.yml
+: 1785952679:0;kubectl apply -f hpa-v2.yml
+: 1785952779:0;kubectl get hpa hpa-demo -n hpa-demo
+: 1785952849:0;kubectl run load-generator -n hpa-demo --image=busybox:1.36 --restart=Never -- /bin/sh -c "while true; do wget -q -O- http://hpa-demo-svc.hpa-demo.svc.cluster.local; done"
+: 1785952870:0;ls
+: 1785952874:0;cd kubelabs
+: 1785952876:0;ls
+: 1785952879:0;cd labs
+: 1785952880:0;ls
+: 1785952882:0;cd hpa
+: 1785952887:0;kubectl get hpa hpa-demo -n hpa-demo -w
+: 1785952914:0;ls
+: 1785952919:0;kubectl get hpa hpa-demo -n hpa-demo -w
+: 1785953126:0;kubectl run load-generator -n hpa-demo --image=busybox:1.36 --restart=Never -- /bin/sh -c "while true; do wget -q -O- http://hpa-demo-svc.hpa-demo.svc.cluster.local; done"
+: 1785953145:0;kubectl top pods -n hpa-demo -l app=hpa-demo
+: 1785954019:0;cd kubelabs/labs/hpa
+: 1785954027:0;kubectl get hpa hpa-demo -n hpa-demo -w
+: 1785954034:0;kubectl top pods -n hpa-demo -l app=hpa-demo
+: 1785954091:0;kubectl apply -f hpa-v2.yml
+: 1785954095:0;kubectl top pods -n hpa-demo -l app=hpa-demo
+: 1785955245:0;kubectl delete pod load-generator -n hpa-demo
+: 1785955292:0;kubectl get hpa hpa-demo -n hpa-demo -w
+: 1785956131:0;kubectl apply -f hpa-deploy.yml
+: 1785956134:0;kubectl get hpa hpa-demo -n hpa-demo -w
+: 1785956419:0;kubectl delete -f hpa-v2.yaml\
+kubectl delete -f hpa-svc.yaml\
+kubectl delete -f hpa-deploy.yaml
+: 1785956433:0;kubectl delete -f hpa-v2.yml\
+kubectl delete -f hpa-svc.yml\
+kubectl delete -f hpa-deploy.yml
+: 1785956439:0;kubectl delete all --all -n hpa-demo
+: 1786323654:0;htop
+: 1786323663:0;sudo su
+: 1786323741:0;sudo chattr -ia ~/.ssh/authorized_keys
+: 1786323753:0;vim  ~/.ssh/authorized_keys
+: 1786323768:0;sudo apt update && sudo apt install -y fail2ban\
+cat <<'EOF' | sudo tee /etc/fail2ban/jail.local\
+[sshd]\
+enabled = true\
+maxretry = 3\
+bantime  = 1h\
+EOF\
+sudo systemctl enable --now fail2ban\
+
+: 1786382906:0;cd ..
+: 1786382909:0;clear
+: 1786382961:0;ssh-keygen -q -N "" -C "kevin@lab.com"
+: 1786382990:0;cd ..
+: 1786382992:0;ls
+: 1786382995:0;cd ..
+: 1786382997:0;ls
+: 1786383000:0;cd student
+: 1786383001:0;ls
+: 1786383004:0;ls -a
+: 1786383034:0;ls
+: 1786383038:0;cd ..
+: 1786383040:0;ls -a
+: 1786383043:0;cd student
+: 1786383046:0;ls -a
+: 1786383063:0;cat ~/.ssh/id_rsa.pub
+: 1786383149:0;ls ~/.ssh
+: 1786383167:0;cat ~/.ssh/id_ed25519.pub
+: 1786383647:0;cd /home
+: 1786383651:0;mkdir dev
+: 1786383661:0;sudo mkdir dev
+: 1786383664:0;ls
+: 1786383667:0;cd dev
+: 1786383676:0;echo "# dev" >> README.md
+: 1786383681:0;sudo echo "# dev" >> README.md
+: 1786383688:0;ls
+: 1786383693:0;sudo 
+: 1786383698:0;sudo echo "# dev" >> README.md
+: 1786383710:0;echo "# dev" >> README.md
+: 1786383712:0;sudo su
+: 1786383738:0;ls
+: 1786383747:0;cat README.md
+: 1786383750:0;clear
+: 1786384030:0;git init
+: 1786384040:0;sudo git init
+: 1786384054:0;sudo git add README.md
+: 1786384063:0;sudo git commit -m "first commit"
+: 1786384162:0;git config --global user.email "kevin.viquez@teradyne.com"
+: 1786384191:0;git config --global user.name "kevin-viquez-kubescourse"
+: 1786384327:0;git commit -m "first commit"
+: 1786384332:0;sudo git commit -m "first commit"
+: 1786384408:0;sudo git config --global user.email "you@example.com"
+: 1786384418:0;sudo git config --global user.name "Your Name"
+: 1786384427:0;git commit -m "first commit"
+: 1786384503:0;sudo git config --global user.name "kevin-viquez-kubescourse"
+: 1786384522:0;sudo git config --global user.email "kevin.viquez@teradyne.com"
+: 1786384533:0;sudo git commit -m "first commit"
+: 1786384547:0;git branch -M main
+: 1786384554:0;sudo git branch -M main
+: 1786384676:0;git remote add origin git@github.com:kevin-viquez-kubescourse/dev.git
+: 1786384682:0;sudo git remote add origin git@github.com:kevin-viquez-kubescourse/dev.git
+: 1786384701:0;sudo  git push -u origin main
+: 1786384781:0;sudo git remote add origin git@github.com:kevin-viquez-kubescourse/dev.git
+: 1786384786:0;sudo  git push -u origin main
+: 1786384853:0;ls
+: 1786384855:0;cd ..
+: 1786384859:0;ls
+: 1786384877:0;cat ~/.ssh/id_ed25519.pub
+: 1786385085:0;ls
+: 1786385095:0;ls 
+: 1786385098:0;ls -a 
+: 1786385132:0;sudo mv dev/ student
+: 1786385144:0;cd student
+: 1786385145:0;ls
+: 1786385193:0;cd .. 
+: 1786385195:0;ls
+: 1786385197:0;ls -a 
+: 1786385204:0;ls -la 
+: 1786385252:0;sudo chown student:student dev
+: 1786385269:0;sudo chown -R student:student dev
+: 1786385277:0;cd dev
+: 1786385280:0;ls
+: 1786385284:0;ls -l
+: 1786385305:0;git push -u origin main
+: 1786385392:0;git checkout -b stage
+: 1786385400:0;git push -u origin stage
+: 1786386019:0;git clone https://github.com/cachac/cicdlabs.git
+: 1786386028:0;cp -r cicdlabs/assets/dev/public-api/. .
+: 1786386033:0;rm -rf cicdlabs/
+: 1786386051:0;git add .
+: 1786386060:0;git commit -m 'starting code'
+: 1786386067:0;git push origin stage
+: 1786386622:0;docker ps
+: 1786386640:0;docker login
+: 1786386927:0;source .env.qa
+: 1786386936:0;echo $APP_ENV_KUBE_API
+: 1786387033:0;export REGISTRY=ksteve17
+: 1786387076:0;docker build . -t $REGISTRY/kubelabs_publicapi:1.0.0 --build-arg APP_ENV="$APP_ENV_KUBE_API"
+: 1786387222:0;docker images
+: 1786387258:0;docker push $REGISTRY/kubelabs_publicapi:1.0.0
+: 1786387398:0;docker run -d --restart always --name api -p 3080:3080 $REGISTRY/kubelabs_publicapi:1.0.0
+: 1786387428:0;curl localhost:3080/healthcheck
+: 1786387447:0;docker ps 
+: 1786387474:0;docker rm -f api
+: 1786387482:0;docker ps -a
+: 1786387780:0;kubectl get nodes
+: 1786555278:0;;s
+: 1786555279:0;ls
+: 1786555288:0;mkdir ops
+: 1786555291:0;ls
+: 1786555380:0;git init
+: 1786555393:0;git add README.md
+: 1786555512:0;git status
+: 1786555666:0;ls
+: 1786555670:0;mkdir ops
+: 1786555673:0;cd ops
+: 1786555716:0;git status
+: 1786555728:0;echo "# ops" >> README.md
+: 1786555736:0;ls
+: 1786555744:0;echo "# ops" >> README.md
+: 1786555755:0;vi README.md
+: 1786555764:0;ls
+: 1786555770:0;vi README.md
+: 1786555778:0;ls
+: 1786555786:0;echo "# ops" >> README.md
+: 1786555789:0;ls
+: 1786555816:0;echo "# ops" >> README.md
+: 1786555820:0;ls
+: 1786555829:0;git init
+: 1786555836:0;git add README.md
+: 1786555847:0;git commit -m "first commit"
+: 1786555855:0;git branch -M main
+: 1786555861:0;git remote add origin git@github.com:kevin-viquez-kubescourse/ops.git
+: 1786555866:0;git push -u origin main
+: 1786555922:0;mkdir public-api
+: 1786556727:0;ls
+: 1786556731:0;cd ..
+: 1786556733:0;ls
+: 1786556736:0;cd dev
+: 1786556737:0;ls
+: 1786556743:0;cd ..
+: 1786556744:0;ls
+: 1786556750:0;cd kubelabs
+: 1786556750:0;ls
+: 1786556755:0;cd labs
+: 1786556755:0;ls
+: 1786556762:0;cd hpa
+: 1786556763:0;ls
+: 1786556775:0;cd ..
+: 1786556776:0;ls
+: 1786556781:0;cd bases
+: 1786556782:0;ls
+: 1786556790:0;cat bases-ingress.yml
+: 1786556823:0;clear
+: 1786556824:0;ls
+: 1786556832:0;cat bases-svc.yml
+: 1786556838:0;cd ..
+: 1786556839:0;ls
+: 1786556843:0;cd ..
+: 1786556844:0;ls
+: 1786556847:0;cd labs
+: 1786556849:0;ls
+: 1786556852:0;cd networking
+: 1786556853:0;ls
+: 1786556857:0;cat ingress
+: 1786556868:0;cat ingress.yml
+: 1786556890:0;cat ingress-svc.yml
+: 1786556909:0;cd ..
+: 1786556915:0;cd ops
+: 1786556916:0;ls
+: 1786556918:0;cd public-api
+: 1786556920:0;ls
+: 1786557837:0;docker login 
+: 1786557897:0;where .docker
+: 1786557978:0;ls
+: 1786557990:0;ls ~
+: 1786557993:0;ls ~ -la
+: 1786558008:0;ls ~/.docker
+: 1786558022:0;cat ~/.docker/config.json
+: 1786558100:0;export DOCKER_PATH=~/.docker/config.json
+: 1786558114:0;kubectl create secret generic regcred \\
+    --from-file=.dockerconfigjson=$DOCKER_PATH \\
+    --type=kubernetes.io/dockerconfigjson \\
+    -n public-stage
+: 1786558127:0;kubectl apply -f ns.yml
+: 1786558131:0;kubectl create secret generic regcred \\
+    --from-file=.dockerconfigjson=$DOCKER_PATH \\
+    --type=kubernetes.io/dockerconfigjson \\
+    -n public-stage
+: 1786558138:0;kubectl get secret regcred
+: 1786558171:0;kubectl get secret regcred -n public-stage
+: 1786559011:0;kubectl apply -f cm.yml
+: 1786559019:0;kubectl apply -f deploy.yml
+: 1786559026:0;kubectl apply -f ing.yml
+: 1786559034:0;kubectl apply -f svc.yml
+: 1786559119:0;kubectl delete -all
+: 1786559150:0;kubectl delete all --all
+: 1786559201:0;kubectl config set-context --current --namespace=public-stage
+: 1786559217:0;kubectl apply -f ns.yml
+: 1786559220:0;kubectl config set-context --current --namespace=public-stage
+: 1786559238:0;kubectl apply -f . 
+: 1786559320:0;kubectl delete all --all
+: 1786559363:0;kubectl apply -f ns.yml
+: 1786559366:0;kubectl config set-context --current --namespace=public-stage
+: 1786559370:0;kubectl apply -f . 
+: 1786559380:0;kubectl delete ns public-stage --force --grace-period=0
+: 1786559450:0;sudo snap install kustomize
+: 1786559482:0;kustomize version 
+: 1786561097:0;export DOCKER_PATH=/home/kube/.docker/config.json
+: 1786561112:0;export DOCKER_PATH=~/.docker/config.json
+: 1786561142:0;kubectl create secret generic regcred \\
+    --from-file=.dockerconfigjson=$DOCKER_PATH \\
+    --type=kubernetes.io/dockerconfigjson \\
+    -n public-stage --dry-run=client -o yaml
+: 1786987470:0;kubectl create namespace argocd
+: 1786987490:0;kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+: 1786987506:0;kubectl config set-context --current --namespace=argocd
+: 1786987528:0;kubectl get pods
+: 1786987549:0;kubectl get pods -n argocd
+: 1786987565:0;watch kubectl get pods
+: 1786987580:0;cd ..
+: 1786987584:0;ls
+: 1786987590:0;cd ops
+: 1786987592:0;ls
+: 1786987628:0;clear
+: 1786987638:0;kubectl apply -f nodeport.yml
+: 1786987648:0;kubectl get svc
+: 1786987666:0;kubectl describe svc argo-nodeport
+: 1786987843:0;kubectl -n argocd port-forward $(kubectl -n argocd get pod -l app.kubernetes.io/name=argocd-server -o jsonpath='{.items[0].metadata.name}') 8080:8080\
+
+: 1786987895:0;kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
+: 1786987958:0;sudo curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+: 1786987978:0;sudo chmod +x /usr/local/bin/argocd
+: 1786988100:0;argocd login 207.231.108.76:30080  --insecure --grpc-web --username admin --password F3PamOKJ4q3h-C91
+: 1786988289:0;argocd app list
+: 1786988834:0;cat ~/.ssh/id_ed25519
+: 1786991877:0;git status 
+: 1786991987:0;git add .
+: 1786991998:0;git push sync ops
+: 1786992012:0;git commit -m  "syn ops"
+: 1786992016:0;git push 
+: 1786992102:0;git status
+: 1786992434:0;clear
+: 1786992434:0;git add .
+: 1786992453:0;git commit -m Update
+: 1786992459:0;git commit -m "sync ops again"
+: 1786992462:0;git push
+: 1786992648:0;git status
+: 1786992653:0;git add .
+: 1786992658:0;git commit -m "sync ops again 2"
+: 1786992662:0;git push
+: 1786992804:0;git add .
+: 1786992809:0;git commit -m "sync ops again 3"
+: 1786992811:0;git push
+: 1786993368:0;git add .
+: 1786993386:0;git commit -m "sync ops again - fixed typos and repo pointer"
+: 1786993391:0;git push
+: 1786993516:0;clear
+: 1786993518:0;ls
+: 1786993520:0;cd public-api
+: 1786993537:0;kustomize build overlays/stage > build-stage.yaml
+: 1786993802:0;kustomize build overlays/stage
+: 1786994285:0;clear
+: 1786994287:0;kustomize build overlays/stage
+: 1786994305:0;kustomize build overlays/stage > build-stage.yaml
+: 1786994315:0;celar
+: 1786994317:0;clear
+: 1786994322:0;git status 
+: 1786994327:0;git add . 
+: 1786994341:0;git commit -m  "Missing lab 5  :( "
+: 1786994357:0;git push
+: 1787161221:0;cat ~/.ssh/id_ed25519
+: 1787161693:0;kustomize build overlays/stage > build-stage.yaml
+: 1787161722:0;git status 
+: 1787161729:0;git add . 
+: 1787161744:0;git commit -m  "patch for replicas "
+: 1787161750:0;git push
+: 1787163836:0;kustomize build overlays/prod > build-prod.yaml
+: 1787163848:0;ls
+: 1787163872:0;kustomize build overlays/production > build-prod.yaml
+: 1787163909:0;kubectl apply -k  overlay/production
+: 1787163918:0;kubectl apply -k  overlays/production
+: 1787164219:0;kustomize build overlays/production > build-prod.yaml
+: 1787164229:0;kubectl apply -k  overlay/production
+: 1787164236:0;kubectl apply -k  overlays/production
+: 1787164285:0;kustomize build overlays/production > build-prod.yaml
+: 1787164291:0;kubectl apply -k  overlays/production
+: 1787164371:0;kustomize build overlays/production > build-prod.yaml
+: 1787164374:0;kubectl apply -k  overlays/production
+: 1787164393:0;kustomize build overlays/production > build-prod.yaml
+: 1787164395:0;kubectl apply -k  overlays/production
+: 1787164410:0;kustomize build overlays/production > build-prod.yaml
+: 1787164412:0;kubectl apply -k  overlays/production
+: 1787164705:0;git status
+: 1787164715:0;git add . 
+: 1787164749:0;git commit -m "kustomiz practice and prod app in argo"
+: 1787164754:0;git push 
+: 1787164910:0;kubectl get apps -n argocd
+: 1787164922:0;argocd app sync --project default
+: 1787165141:0;kubectl get pods -n argocd
+: 1787165263:0;argocd login 207.231.108.76:30080  --insecure --grpc-web --username admin --password F3PamOKJ4q3h-C91
+: 1787165374:0;argocd app sync --project default
+: 1787165806:0;git status 
+: 1787165809:0;git add .
+: 1787165820:0;git commit -m  "fixed typo"
+: 1787165824:0;git push
+: 1787166011:0;kubectl get pods -n argocd
+: 1787166051:0;kubectl get pods -n public
+: 1787166149:0;git status 
+: 1787166157:0;kubectl get pods -n public
+: 1787166173:0;kustomize build overlays/production > build-prod.yaml
+: 1787166184:0;kubectl apply -k  overlays/production
+: 1787166193:0;kubectl get pods -n public
+: 1787166307:0;git add . 
+: 1787166340:0;git commit -m "fixed typo and changed deplo patch"
+: 1787166346:0;git puch
+: 1787166352:0;git pusj
+: 1787166355:0;git push
+: 1787166621:0;git status
+: 1787166729:0;kubectl get pods -n public-stage
+: 1787166778:0;kubectl apply -k  overlays/stage
+: 1787166782:0;kubectl get pods -n public-stage
+: 1787166808:0;git add . 
+: 1787166818:0;git commit -m "fixed typo"
+: 1787166823:0;git push
+: 1787593470:0;kubectl get pods -n public
+: 1787596284:0;git checkout stage
+: 1787596308:0;cd ..
+: 1787596313:0;cd dev
+: 1787596314:0;ls
+: 1787596322:0;git checout stage
+: 1787596328:0;git checkout stage
+: 1787596359:0;cd ..
+: 1787596366:0;ls
+: 1787596369:0;cd kubelabs
+: 1787596373:0;cd dev
+: 1787596374:0;ls
+: 1787596379:0;cd ..
+: 1787596380:0;ls
+: 1787596385:0;cd ..
+: 1787596388:0;cd dev
+: 1787596389:0;ls
+: 1787596393:0;git checkout stage
+: 1787596841:0;git status
+: 1787596860:0;git add . 
+: 1787596872:0;git commit -m "new demo action"
+: 1787596876:0;git push
+: 1787597630:0;git add . 
+: 1787597635:0;git commit -m "new demo action 2"
+: 1787597637:0;git push
+: 1787597726:0;git add . 
+: 1787597730:0;git commit -m "new demo action 3"
+: 1787597732:0;git push
+: 1787598166:0;git add . 
+: 1787598170:0;git commit -m "new demo action 4"
+: 1787598171:0;git push
+: 1787598312:0;git add . 
+: 1787598316:0;git commit -m "new demo action 5"
+: 1787598318:0;git push
+: 1787598358:0;git add . 
+: 1787598361:0;git commit -m "new demo action 6"
+: 1787598363:0;git push
+: 1787765793:0;git status 
+: 1787765799:0;git add . 
+: 1787765812:0;git commit -m "new actions workflow"
+: 1787765815:0;git push 
+: 1787767319:0;git satus
+: 1787767322:0;git status
+: 1787767325:0;git add . 
+: 1787767357:0;git commit -m "build and push dockerfile"
+: 1787768235:0;git push 
+: 1787768646:0;git add . 
+: 1787768668:0;git commit -m "removing registry and using username"
+: 1787768671:0;dokcer push
+: 1787768676:0;docker push
+: 1787768684:0;git push 
+: 1787769261:0;git 
+: 1787769384:0;git tag -m "docker tag version" -a 1.0.1
+: 1787769399:0;git add .
+: 1787769413:0;git commit -m "git hub workflow - tag version"
+: 1787769427:0;git push origin stage  --tags
+: 1787769449:0;git tag --sort=-creatordate | head
+: 1787770012:0;git add .
+: 1787770033:0;git commit -m "commit instead of tag"
+: 1787770039:0;git push 
+: 1788318603:0;cd
+: 1788318619:0;ps aux | grep redis-server
+: 1788318631:0;docker run -d --name=db redis:alpine
+: 1788318647:0;ps aux | grep redis-server
+: 1788318922:0;docker run -d name=db redis:alpine
+: 1788318960:0;docker run -d-- name=db redis:alpine
+: 1788319346:0;systemctl docker
+: 1788319475:0;sudo systemctl status docker
+: 1788319750:0;clear
+: 1788319797:0;docker run -d --name=db redis:alpine
+: 1788319832:0;docker create --name ciclo ubuntu
+: 1788319903:0;docker images
+: 1788320142:0;docker ps
+: 1788320196:0;docker ps -a
+: 1788320318:0;docker start ciclo\
+\
+docker ps\
+docker ps -a
+: 1788320573:0;\
+\
+docker ps\
+docker ps -a
+: 1788320837:0;clear
+: 1788320851:0;docker run --name ciclo ubuntu sh -c "while true; do $(echo date); sleep 1; done"
+: 1788321080:0;docker rm ciclo\
+\
+docker run --name ciclo ubuntu sh -c "while true; do $(echo date); sleep 1; done"
+: 1788321163:0;control + c\
+\
+docker ps -a\
+\
+docker start ciclo\
+\
+docker ps
+: 1788321341:0;docker ps
+: 1788321358:0;docker ps -a
+: 1788321544:0;clear
+: 1788321558:0;docker ppause ciclo
+: 1788321567:0;docker pause ciclo
+: 1788321583:0;docker ps
+: 1788321688:0;docker unpause ciclo
+: 1788321700:0;docker ps
+: 1788321714:0;docker stop ciclo\
+\
+docker ps\
+docker ps -a
+: 1788321766:0;docker rm -f ciclo
+: 1788321936:0;rm ubuntu  
+: 1788322419:0;docker rm -f 30ff916786b5 2450618dd090\
+
+: 1788322436:0;docker ps -a
+: 1788322455:0;shutdown
+: 1788322465:0;sudo shutdown
+: 1788480709:0;pwd
+: 1788480775:0;mkdir luis fernandez dockers 
+: 1788480779:0;pwd
+: 1788480805:0;cd luis fernandez 
+: 1788480810:0;pwd
+: 1788480819:0;cd ..
+: 1788480822:0;ls
+: 1788480887:0;ls 
+: 1788480893:0;ls all
+: 1788480932:0;ls-a
+: 1788480937:0;ls -a
+: 1788480949:0;cd student
+: 1788480950:0;ls
+: 1788480986:0;cd fernandez
+: 1788480990:0;ls
+: 1788480993:0;cd..
+: 1788480998:0;cd ..
+: 1788481001:0;ls
+: 1788481007:0;cd dockers
+: 1788481009:0;ls
+: 1788481012:0;ls -a
+: 1788481019:0;cd ..
+: 1788481030:0;cd luis
+: 1788481034:0;ls -a
+: 1788481081:0;rm fernandez
+: 1788481172:0;rmdir luis\
+rmdir fernandez\
+rmdir dockers\
+
+: 1788481177:0;cd..
+: 1788481179:0;cd ..
+: 1788481183:0;rmdir luis\
+rmdir fernandez\
+rmdir dockers\
+
+: 1788481232:0;mkdir luis/fernandez/dockers
+: 1788481257:0;mkdir luis-fernandez-dockers
+: 1788481271:0;cd luis-fernandez-dockers
+: 1788481335:0;clear
+: 1788481338:0;sudo apt update\
+curl -fsSL https://get.docker.com -o get-docker.sh\
+sudo sh get-docker.sh\
+\
+sudo usermod -aG docker $USER\
+newgrp docker\
+docker run hello-world
+: 1788484065:0;docker run -d --name=db redis:alpine
+: 1788484098:0;ps aux | grep redis-server
+: 1788484346:0;docker ps
+: 1788485221:0;docker rm -f db\
+
+: 1788485227:0;ls
+: 1788485262:0;cd ..\
+rm -rf luis-fernandez-dockers\
+
+: 1788485275:0;sudo shutdown
+: 1788802273:0;cat ~/.ssh/id_ed25519
+: 1788803041:0;ls
+: 1788803049:0;cd dev
+: 1788803054:0;git status
+: 1788803071:0;git add .
+: 1788803086:0;git commit -m "deploy job"
+: 1788803089:0;git push
+: 1788803475:0;pwd
+: 1788804250:0;git status
+: 1788804428:0;git add .
+: 1788804445:0;git commit -m "fix checkout version"
+: 1788804448:0;git push
+: 1788805116:0;git status
+: 1788805120:0;git add . 
+: 1788805138:0;git commit -m "updated ops repo var"
+: 1788805144:0;gitpush
+: 1788805148:0;git push
+: 1788805800:0;git add . 
+: 1788805813:0;git commit -m "add push to ops"
+: 1788805816:0;git push
+: 1788806618:0;kubectl get pods 
+: 1788806694:0;kubectl -n argocd port-forward $(kubectl -n argocd get pod -l app.kubernetes.io/name=argocd-server -o jsonpath='{.items[0].metadata.name}') 8080:8080\
+
+: 1788806713:0;argocd login 207.231.108.76:30080  --insecure --grpc-web --username admin --password F3PamOKJ4q3h-C91
+: 1788806833:0;ls
+: 1788806835:0;cd ..
+: 1788806836:0;ls
+: 1788806840:0;cd ops
+: 1788806841:0;ls
+: 1788806848:0;kubectl apply -f nodeport.yaml
+: 1788806852:0;ls
+: 1788806856:0;kubectl apply -f nodeport.yml
+: 1788806918:0;kubectl describe svc argo-nodeport
+: 1788806927:0;kubectl get pods 
+: 1788807213:0;ipconfig
+: 1788807216:0;ifconfig
+: 1788807219:0;ip
+: 1788807226:0;clear
+: 1788807230:0;kubectl describe svc argo-nodeport
+: 1788807404:0;clear
+: 1788807413:0;kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+: 1788807428:0;kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+: 1788807452:0;clear
+: 1788807454:0;kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+: 1788807504:0;ls
+: 1788807562:0;kubectl config set-context --current --namespace=argocd
+: 1788807637:0;ls
+: 1788807644:0;kubectl apply -f nodeport.yml
+: 1788807653:0;kubectl get pods
+: 1788807681:0;kubectl describe svc argo-nodeport
+: 1788807691:0;kubectl get pods
+: 1788807804:0;kubectl logs argocd-applicationset-controller-68d97b7568-xmhhg
+: 1788807926:0;clear
+: 1788807942:0;kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/stable/manifests/install.yaml
+: 1788808521:0;kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/df8569884951ee89d2a5ce42daedfc71c08c76ae/manifests/install.yaml
+: 1788808593:0;kubectl apply --server-side --force-conflicts -k https://github.com/argoproj/argo-cd/manifests/crds\?ref\=stable
+: 1788808627:0;kubectl get pods
+: 1788808655:0;kubectl describe svc argo-nodeport
+: 1788808706:0;ip a
+: 1788808815:0;kubectl delete svc argo-nodeport
+: 1788808824:0;kubectl apply -f nodeport.yml
+: 1788808830:0;kubectl get pods
+: 1788808835:0;kubectl describe svc argo-nodeport
+: 1788808934:0;kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
+: 1788809495:0;cat ~/.ssh/id_ed25519
+: 1788813227:0;clear
+: 1788831874:0;ls
+: 1788831876:0;cd ..
+: 1788831878:0;ls
+: 1788831880:0;cd dev
+: 1788831882:0;ls
+: 1788832033:0;git fetch
+: 1788832045:0;git checkout main-wf
+: 1788832280:0;git status
+: 1788832374:0;git commit -m "Added main workflow"
+: 1788832391:0;git add .
+: 1788832393:0;git commit -m "Added main workflow"
+: 1788832399:0;git push
+: 1788912652:0;docker ps 
+: 1788912870:0;history
+: 1788912915:0;ls
+: 1788912924:0;docker images
+: 1788912945:0;docker ps -a
+: 1788914632:0;cd 
+: 1788914646:0;git clone https://github.com/cachac/dockerlabs.git
+: 1788916517:0;cd labs 
+: 1788916682:0;docker build -t demowebsite:1.0 .
+: 1788917244:0;docker images 
+: 1788917558:0;docker run -d --name website -p 8080:80 demowebsite:1.0
+: 1788917580:0;docker ps 
+: 1788917942:0;docker logs -f website
+: 1788920838:0;docker rm -f website\
+
+: 1788920976:0;docker build --build-arg AUTOR="Carlos Chacon" -t demowebsite:2.0 .
+: 1788921201:0;docker run -d --name website -p 8080:80 demowebsite:2.0\
+
+: 1788921284:0;docker ps 
+: 1788921328:0;docker exec website ls 
+: 1788921352:0;docker exec website pwd 
+: 1788921380:0;docker exec website sh 
+: 1788921384:0;docker exec website sh
+: 1788921388:0;docker exec website bash
+: 1788921394:0;docker exec website sh 
+: 1788921414:0;docker exec -it website sh 
+: 1788921664:0;uname -r 
+: 1788921695:0;docker exec website uname -r 
+: 1788921784:0;docker exec website uname -a 
+: 1788921795:0;uname -a 
+: 1788921815:0;docker exec website uname -a 
+: 1788921827:0;docker exec website hostnamectl
+: 1788921834:0;docker exec website hostname
+: 1788922645:0;docker build . -f demo.dockerfile -t dockerlabs
+: 1788923113:0;docker images 
+: 1788923168:0;docker pull cachac/dockerlabs_base:node14\
+
+: 1788923191:0;docker images 
+: 1788923447:0;docker run -p 8080:8080 dockerlabs:latest\
+
+: 1788923519:0;docker ps 
+: 1788923527:0;docker stop website 
+: 1788923529:0;docker ps 
+: 1788923540:0;docker ps -a 
+: 1788923560:0;docker run -p 8080:8080 dockerlabs:latest\
+
+: 1788923677:0;docker image prune
+: 1788923711:0;docker container prune\
+
+: 1788924981:0;docker images 
+: 1788925051:0;docker tag dockerlabs:latest cachac/dockerlabs:v1.0
+: 1788925054:0;docker images 
+: 1788925183:0;docker push cacahc/dockerlabs:v1.0 
+: 1788925189:0;docker push cachac/dockerlabs:v1.0 
+: 1788925222:0;docker login 
+: 1788925259:0;docker logout 
+: 1788925264:0;docker login 
+: 1788925572:0;docker network create lab\
+
+: 1788925576:0;docker network ls\
+
+: 1788925667:0;docker run --name multidocker_1 -d --network lab dockerlabs:latest
+: 1788925676:0;docker run --name multidocker_2 -d --network lab dockerlabs:latest
+: 1788925681:0;docker run --name multidocker_3 -d --network lab dockerlabs:latest
+: 1788925698:0;docker ps 
+: 1788926186:0;docker build . -f loadbalancer.dockerfile -t loadbalancer \
+
+: 1788926230:0;docker ps 
+: 1788926324:0;docker run --name loadbalancer -dp 8080:80 --restart on-failure --network lab loadbalancer\
+
+: 1788926545:0;docker ps 
+: 1788926649:0;docker rm -f multidocker_1 
+: 1788926730:0;docker rm -f multidocker_
+: 1788926733:0;docker rm -f multidocker_2
+: 1788988217:0;cd
+: 1788989853:0;git clone https://github.com/cachac/dockerlabs.git
+: 1788991026:0;cd
+: 1788991031:0;pwd
+: 1788991042:0;git clone https://github.com/cachac/dockerlabs.git
+: 1788994553:0;PWD
+: 1788994558:0;pwd
+: 1788994577:0;cd labs
+: 1788994598:0;ls
+: 1788994614:0;cd dockerlabs
+: 1788994823:0;docker build -t demowebsite:1.0 .\
+\
+docker images
+: 1788996635:0;docker build -t demowebsite:1.0 .
+: 1788996999:0;docker images
+: 1788997952:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+
+: 1788997980:0;docker ps
+: 1788998437:0;docker log -f website
+: 1788998451:0;docker logs -f website
+: 1788998672:0;docker compose ps -a\
+
+: 1788998710:0;find . -maxdepth 3 \( -name "docker-compose.yml" -o -name "docker-compose.yaml" -o -name "compose.yml" -o -name "compose.yaml" \)\
+
+: 1788998851:0;#!/bin/bash\
+\
+echo "=== CONTAINERS ==="\
+docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}'\
+\
+echo\
+echo "=== LOGS: multidocker_3 ==="\
+docker logs --tail 50 multidocker_3 2>&1\
+\
+echo\
+echo "=== LOGS: loadbalancer ==="\
+docker logs --tail 50 loadbalancer 2>&1\
+\
+echo\
+echo "=== PROCESSES: multidocker_3 ==="\
+docker top multidocker_3\
+\
+echo\
+echo "=== INSPECT: multidocker_3 ==="\
+docker inspect multidocker_3 \\
+  --format 'Image={{.Config.Image}}\
+Entrypoint={{json .Config.Entrypoint}}\
+Cmd={{json .Config.Cmd}}\
+WorkingDir={{.Config.WorkingDir}}\
+Restart={{.HostConfig.RestartPolicy.Name}}'\
+\
+echo\
+echo "=== NETWORKS ==="\
+docker inspect multidocker_3 \\
+  --format '{{range $k,$v := .NetworkSettings.Networks}}{{$k}} {{end}}'\
+\
+echo\
+echo "=== COMPOSE FILES ==="\
+find .. -maxdepth 4 -type f \( \\
+  -name "docker-compose.yml" \\
+  -o -name "docker-compose.yaml" \\
+  -o -name "compose.yml" \\
+  -o -name "compose.yaml" \\
+\) 2>/dev/null\
+
+: 1788998924:0;clear
+: 1788998932:0;cd
+: 1788998935:0;pwd
+: 1788998952:0;git clone https://github.com/cachac/dockerlabs.git
+: 1788999188:0;cd labs
+: 1788999194:0;pwd
+: 1788999206:0;cd dockerlabs/labs
+: 1788999366:0;docker ps -a
+: 1788999588:0;docker ps 
+: 1788999742:0;docker rm -f 1e3978cd8de4\
+
+: 1788999748:0;docker ps -a
+: 1788999796:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1788999832:0;docker run -d --name website -p 8080:80 demowebsite:1.0
+: 1788999943:0;docker images\
+
+: 1789000040:0;dockerlabs:latest\
+cachac/dockerlabs:v1.0\
+
+: 1789000049:0;docker rmi dockerlabs:latest cachac/dockerlabs:v1.0\
+
+: 1789000060:0;docker rm -f multidocker_3\
+
+: 1789000074:0;docker ps -a
+: 1789000119:0;docker rm 3c59f56424ac
+: 1789000162:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1789000287:0;docker rm f233ad0779ff 
+: 1789000302:0;docker rm -f f233ad0779ff 
+: 1789000323:0;docker ps 
+: 1789000338:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1789000380:0;docker ps -a 
+: 1789000582:0;docker images
+: 1789000643:0;docker rmi demowebsite:1.0 demowebsite:2.0\
+
+: 1789000664:0;docker rmi -f demowebsite:1.0 demowebsite:2.0\
+
+: 1789000671:0;docker images
+: 1789000746:0;docker build -t demowebsite:1.0 .
+: 1789000764:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1789000780:0;docker ps -a
+: 1789000826:0;docker run -d --name website -p 8080:80 demowebsite:1.0
+: 1789000881:0;docker rm -f website\
+
+: 1789001039:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1789001664:0;docker logs -f website
+: 1789004011:0;docker rm -f website
+: 1789004185:0;docker build --build-arg AUTOR="LUISFERNANDEZ" -t demowebsite:2.0 .
+: 1789004452:0;docker run -d --name website -p 8080:80 demowebsite:2.0
+: 1789004513:0;DOCKER PS -A
+: 1789004520:0;docker ps -a
+: 1789004546:0;docker rmi - f b2cf64b2bd9e 
+: 1789004560:0;docker rmi - f b2cf64b2bd9e
+: 1789004590:0;docker ps -a
+: 1789004602:0;docker rm -f b2cf64b2bd9e 
+: 1789004639:0;docker run -d --name website -p 8080:80 demowebsite:2.0
+: 1789004655:0;docker ps -a
+: 1789004742:0;docker port website\
+
+: 1789004780:0;docker logs website\
+
+: 1789004795:0;docker inspect website --format 'Status={{.State.Status}} ExitCode={{.State.ExitCode}}'\
+
+: 1789004937:0;docker rm -f e2689a79333e 
+: 1789004962:0;docker run -d --name website -p 8080:80 demowebsite:2.0
+: 1789004968:0;docker images
+: 1789004991:0;docker run -d --name website -p 8080:80 demowebsite:2.0
+: 1789005082:0;docker rm -f 9d5cc35daeb10f4c5519cab8845fe6c9415b849fcd3a693a9e0d75abbc1eed49\
+
+: 1789005095:0;docker run -d --name website -p 8080:80 demowebsite:2.0
+: 1789005354:0;docker logs website\
+
+: 1789005588:0;docker ps -a --filter ancestor=demowebsite:1.0\
+
+: 1789005595:0;docker ps -a --filter ancestor=demowebsite:2.0\
+
+: 1789008051:0;docker logs website\
+
+: 1789008155:0;docker images
+: 1789008822:0;git clone https://github.com/cachac/dockerlabs.git
+: 1789008923:0;docker ps
+: 1789009085:0;pwd
+: 1789009101:0;docker -a
+: 1789009127:0;docker images
+: 1789009189:0;docker rmi -f b770c7da828f 
+: 1789009199:0;94077d9c25db
+: 1789009209:0;docker rmi -f 94077d9c25db
+: 1789009319:0;docker build -t demowebsite:1.0 .\
+\
+docker images
+: 1789009396:0;pwd
+: 1789009563:0;docker ps -a
+: 1789009663:0;rdocker rmi -f website
+: 1789009672:0;docker rmi -f website
+: 1789009699:0;docker rm -f website
+: 1789009778:0;docker images
+: 1789009796:0;cd dockerlabs/labs
+: 1789009820:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1789010130:0;docker build -t demowebsite:1.0 .\
+\
+docker images
+: 1789010170:0;docker run -d --name website -p 8080:80 demowebsite:1.0\
+\
+docker ps
+: 1789010640:0;docker logs -f website
+: 1789011068:0;docker rm -f website
+: 1789011201:0;docker build --build-arg AUTOR="luisfernandez" -t demowebsite:2.0 .
+: 1789011403:0;docker run -d --name website -p 8080:80 demowebsite:2.0
+: 1789011519:0;docker ps 
+: 1789011794:0;docker exec website ls 
+: 1789011922:0;docker exec website pwd
+: 1789012309:0;# host
+: 1789012318:0;uname -r\
+
+: 1789012334:0;docker exec website uname -r
+: 1789014259:0;clear
+: 1789014432:0;docker build . -f demo.dockerfile -t dockerlabs\
+\
+
+: 1789014522:0;docker images
+: 1789016410:0;docker build . -f demo.dockerfile -t dockerlabs\
+\
+
+: 1789016593:0;ls -la\
+
+: 1789016619:0;find . -name "nginx.conf" -print\
+
+: 1789016888:0;docker build . -f demo.dockerfile -t dockerlabs\
+\
+
+: 1789017387:0;docker images
+: 1789017436:0;docker pull cachac/dockerlabs_base:node14\
+
+: 1789017731:0;docker run -p 8080:8080 dockerlabs:latest
+: 1789017781:0;docker ps 
+: 1789017991:0;docker stop website
+: 1789017998:0;docker run -p 8080:8080 dockerlabs:latest
+: 1789018161:0;docker image prune\
+\
+docker container prune
+: 1789019029:0;docker tag <image_id> <dockerhub user>/dockerlabs\
+\
+Ejemplo:\
+docker tag 12345678901234 cachac/dockerlabs\
+\
+docker push <docker user>/dockerlabs
+: 1789019041:0;CLEAR
+: 1789019045:0;clear
+: 1789019096:0;docker images
+: 1789019290:0;docker tag dockerlabs:latest colleadmin/dockerlabs:v1,0
+: 1789019404:0;docker tag dockerlabs:latest colleadmin/dockerlabs:v1.0
+: 1789019409:0;docker images
+: 1789019757:0;docker push colleadmin/dockerlabs:v1.0
+: 1789019827:0;docker login
+: 1789020141:0;docker push colleadmin/dockerlabs:v1.0
+: 1789020476:0;CLEAR
+: 1789020481:0;clear
+: 1789020484:0;docker network create lab\
+\
+docker network ls
+: 1789020603:0;docker run --name multidocker_1 -d --network lab dockerlabs\
+docker run --name multidocker_2 -d --network lab dockerlabs\
+docker run --name multidocker_3 -d --network lab dockerlabs
+: 1789020608:0;docker ps
+: 1789021421:0;docker build . -f loadbalancer.dockerfile -t loadbalancer
+: 1789021471:0;docker ps
+: 1789021508:0;docker run --name loadbalancer -dp 8080:80 --restart on-failure --network lab loadbalancer\
+\
+docker ps\
+\
+docker logs -f loadbalancer
+: 1789021917:0;docker ps
+: 1789022144:0;docker logs -f  loadbalancer
+: 1789407537:0;ls
+: 1789407540:0;cd ..
+: 1789407547:0;ls
+: 1789407551:0;cd student
+: 1789407582:0;git clone https://github.com/cachac/ai-ops.git
+: 1789407601:0;cd ai-ops
+: 1789407643:0;kubectl create ns dev\
+
+: 1789407655:0;kubectl apply -f assets/quota.yaml
+: 1789407925:0;kubectl apply -f deployment.yaml
+: 1789407939:0;kubectl get pods -n dev
+: 1789407966:0;kubectl get deploy -n dev
+: 1789408011:0;kubectl get rs -n dev
+: 1789408029:0;kubectl describe pods -n dev
+: 1789408045:0;kubectl describe rs -n dev
+: 1789408154:0;kubectl get events -n dev
+: 1789408661:0;curl -fsSL https://opencode.ai/install | bash
+: 1789409225:0;opencode
+: 1789409248:0;curl -fsSL https://opencode.ai/install | bash
+: 1789409308:0;openconde
+: 1789409315:0;opencode
+: 1789409325:0;ls
+: 1789409331:0;opencode
+: 1789410549:0;sudo apt install npm 
+: 1789410657:0;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
+: 1789410676:0;nvm list
+: 1789410725:0;nvm install 22
+: 1789410737:0;nvm list
+: 1789410751:0;npx skills add https://github.com/mattpocock/skills --skill grill-me
+: 1789410873:0;ls
+: 1789410879:0;ls -a 
+: 1789410884:0;cd .agents
+: 1789410885:0;ls
+: 1789410900:0;cd ..
+: 1789410903:0;cat  ~/.agents/skills/grill-me/SKILL.md
+: 1789410975:0;opencode
+: 1789411012:0;opencode -auto
+: 1789411037:0;opencode --auto
+: 1789411341:0;ls
+: 1789411343:0;cd ai-ops
+: 1789411345:0;opencode
+: 1789411503:0;ls
+: 1789411507:0;cd ai-ops
+: 1789411523:0;npx skills add https://github.com/mattpocock/skills --skill grill-me
+: 1789579927:0;opencode
+: 1789580320:0;ls
+: 1789580323:0;cd ai-ops
+: 1789580325:0;ls
+: 1789580338:0;kubectl delete -f deployment.yaml
+: 1789580644:0;ls -a 
+: 1789580781:0;ls
+: 1789580785:0;cd ..
+: 1789580786:0;ls
+: 1789580791:0;cd ..
+: 1789580793:0;ls
+: 1789580795:0;ls -a
+: 1789580797:0;cd student
+: 1789580798:0;ls
+: 1789580810:0;ls -a 
+: 1789580814:0;cd .opencode
+: 1789580815:0;ls
+: 1789580830:0;mkdir agents
+: 1789580833:0;cd agents
+: 1789580848:0;vi kube.md
+: 1789581595:0;ls
+: 1789581596:0;cd ..
+: 1789581601:0;cd ai-ops
+: 1789581605:0;opencode
+: 1789583690:0;curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash
+: 1789583833:0;npx skills add tt-a1i/archify -g
+: 1789583989:0;opencode
+: 1789584465:0;python3 -m http.server 8080 -b 0.0.0.0 -d ~/ai-ops
+: 1790122705:0;ping 8.8.8.8 
+: 1790123113:0;cleaar
+: 1790123116:0;clear
+: 1790123137:0;ip a
+: 1790124277:0;docker network ls
+: 1790124735:0;docker network remove lab
+: 1790124746:0;docker network ls\
+\
+docker network remove lab
+: 1790124783:0;docker network create --driver bridge --subnet 192.168.0.0/24 net-lab\
+\
+docker network ls\
+\
+docker network inspect net-lab
+: 1790124795:0;docker network ls
+: 1790124896:0;docker pull wbitt/network-multitool
+: 1790124985:0;docker run --name server_a --network net-lab -d --ip 192.168.0.2 wbitt/network-multitool\
+docker run --name server_b --network net-lab -d --ip 192.168.0.3 wbitt/network-multitool\
+docker run --name server_c --network net-lab -d --ip 192.168.0.4 wbitt/network-multitool
+: 1790125076:0;docker inspect server_a -f "{{json .NetworkSettings.Networks }}"
+: 1790125099:0;sudo apt update && sudo apt-get install -y jq\
+\
+docker inspect server_a -f "{{json .NetworkSettings.Networks }}" | jq
+: 1790125207:0;docker ps
+: 1790125291:0;docker exec server_a ping server_b\
+docker exec server_a traceroute server_b\
+docker exec server_a dig  server_b
+: 1790125559:0;docker run --name host_a --network host -d wbitt/network-multitool\
+\
+docker ps -a\
+docker logs host_a
+: 1790125763:0;docker rm host_a\
+\
+docker run -d -e HTTP_PORT=1180 -e HTTPS_PORT=11443 --name host_a --network host wbitt/network-multitool\
+\
+docker ps\
+\
+docker inspect host_a -f "{{json .NetworkSettings.Networks }}" | jq
+: 1790125809:0;docker exec host_a ip a\
+docker exec server_a ip a
+: 1790126127:0;docker network create net-privada
+: 1790126280:0;docker run -d --name server_privado_a --network net-privada wbitt/network-multitool\
+\
+docker inspect server_privado_a -f "{{json .NetworkSettings.Networks }}" | jq\
+\
+# desde la vm probar la ip del contenedor:\
+ping <'ip_server_privado_a'>\
+\
+docker exec server_a ping server_privado_a\
+docker exec server_a ping 172.19.0.2\
+docker exec server_a traceroute 172.19.0.2\
+\
+docker exec server_a ping 172.19.0.1
+: 1790126315:0;docker exec server_a ping server_privado_a\
+
+: 1790126330:0;clear
+: 1790126351:0;docker run -d --name server_privado_a --network net-privada wbitt/network-multitool\
+
+: 1790126364:0;docker inspect server_privado_a -f "{{json .NetworkSettings.Networks }}" | jq\
+
+: 1790126576:0;traceroute 172.20.0.1
+: 1790126640:0;docker run --name host_b --network none -d wbitt/network-multitool
+: 1790126670:0;docker inspect host_b -f "{{json .NetworkSettings.Networks }}" | jq\
+
+: 1790126684:0;docker exec host_b ip a\
+
+: 1790126738:0;docker rm -f $(docker ps -a -f status=running -q)\
+\
+docker image prune
+: 1790126758:0;clear
+: 1790126811:0;docker system prume 
+: 1790126848:0;docker system prune
+: 1790129461:0;clear
+: 1790129590:0;docker run -d --memory-swap 100  --name-demo  wbitt/network-multitool\
+
+: 1790129642:0;docker run -d --memory-swap 100m --memory 100m --name mem-demo dockerlabs\
+
+: 1790129667:0;docker stats\
+
+: 1790129815:0;docker run -d --cpu-period=100000 --cpu-quota=50000 --name cpu-demo dockerlabs\
+\
+docker stats cpu-demo
+: 1790129920:0;docker exec cpu-demo apk add stress-ng\
+\
+docker exec -d cpu-demo stress-ng --matrix 1 -t 1m
+: 1790129981:0;htop
+: 1790130469:0;docker exec -d cpu-demo stressng-t 1m --vm-bytes 99% --vm 2
+: 1790130535:0;docker rm -f $(docker ps -a -f status=running -q) && docker image prune
+: 1790131421:0;clear
+: 1790131454:0;# sin limite\
+docker run -d --name sin-limite dockerlabs\
+\
+# con limite\
+docker run -d --memory-swap 100m --memory 100m --name mem-demo dockerlabs\
+\
+docker stats\
+Ãƒ³\
+docker stats mem-demo
+: 1790131628:0;clear
+: 1790131718:0;docker run -d --name demo-mount -p 8080:80 -v ~/dockerlabs/bind.html:/usr/share/nginx/html/index.html nginx:stable-alpine
+: 1790132895:0;docker inspect demo-mount -f "{{json .Mounts }}" | jq
+: 1790133058:0;docker exec -it demo-mount sh\
+\
+cd /usr/share/nginx/html\
+ls\
+cat index.html\
+> index.html
+: 1790133803:0;docker run -it --rm --name demo-vol --mount source=data,destination=/data ubuntu
+: 1790134177:0;sudo ls -a /var/lib/docker/volumes/data/_data
+: 1790134255:0;docker run -dit --rm --name demo-vol1 --mount source=data,destination=/data ubuntu\
+\
+docker run -dit --rm --name demo-vol2 -v data:/data ubuntu
+: 1790134344:0;docker run -dit --rm --name demo-vol1 --mount source=data,destination=/data ubuntu\
+
+: 1790134386:0;docker ps
+: 1790134670:0;docker rm 7f7cf5fdb39c
+: 1790134717:0;docker stop 7f7cf5fdb39c\
+docker rm 7f7cf5fdb39c\
+
+: 1790134737:0;docker ps
+: 1790134753:0;docker rm -f $(docker ps -a -f status=running -q) && docker image prune
+: 1790134872:0;docker ps
+: 1790135926:0;mkdir labs-luisf
+: 1790136015:0;git init
+: 1790136129:0;git init\
+git add README.md\
+git commit -m "first commit"\
+git branch -M main\
+git remote add origin 
+: 1790136178:0;git push -u origin main
+: 1790445629:0;exit
+: 1790445635:0;CLEAR
+: 1790445639:0;exit
+: 1790445674:0;cd..
+: 1790445680:0;cd ..
+: 1790445685:0;pwd
+: 1790445687:0;ls
+: 1790445692:0;cd student
+: 1790445696:0;ls
+: 1790445725:0;cd labs-luisf
+: 1790445903:0;mkdir Practica#2
+: 1790445911:0;cd Practica\#2
+: 1790445955:0;cd ..
+: 1790445978:0;mkdir Practica#1
+: 1790445981:0;ls
+: 1790445993:0;cd Practica\#2
+: 1790446034:0;docker ps
+: 1790446097:0;git clone https://github.com/docker/getting-started.git\
+
+: 1790446505:0;ls
+: 1790446604:0;cd getting-started/app\
+
+: 1790447232:0;Dockerfile\
+
+: 1790447283:0;nano Dockerfile\
+
+: 1790447472:0;cat Dockerfile
+: 1790447483:0;nano Dockerfile\
+
+: 1790447497:0;cat Dockerfile
+: 1790447502:0;nano Dockerfile\
+
+: 1790447568:0;cat Dockerfile
+: 1790447884:0;docker build -t todo-app .\
+
+: 1790447929:0;docker images\
+
+: 1790448082:0;docker run -d -p 8080:3000 --name todo-container todo-app\
+
+: 1790448098:0;docker ps
+: 1790448313:0;docker logs todo-container\
+
+: 1790448337:0;curl http://localhost:8080\
+
+: 1790448391:0;curl http://207.231.108.76:8080\
+
+: 1790448831:0;docker rm -f todo-container\
+
+: 1790448984:0;docker volume create todo-db\
+
+: 1790449004:0;docker volume ls
+: 1790450222:0;docker rm -f todo-container\
+
+: 1790450236:0;docker run -d -p 8080:3000 --name todo-container -v todo-db:/etc/todos todo-app\
+
+: 1790450286:0;docker ps\
+
+: 1790450409:0;docker rm -f todo-container\
+
+: 1790450445:0;docker run -d -p 8080:3000 --name todo-container -v todo-db:/etc/todos todo-app\
+
+: 1790451180:0;cd ..
+: 1790451218:0;ls
+: 1790451226:0;Practica\#1
+: 1790451395:0;docker pull ubuntu:20.04\
+
+: 1790451406:0;docker imager
+: 1790451411:0;docker images
+: 1790451460:0;docker run --name practica ubuntu:20.04\
+
+: 1790451483:0;docker ps -a\
+
+: 1790451594:0;docker run -d -it --name practica ubuntu:20.04\
+
+: 1790451646:0;docker run -d -it --name practica1 ubuntu:20.04\
+
+: 1790451656:0;docker ps\
+
+: 1790451708:0;docker inspect practica1
+: 1790451786:0;docker inspect practica1 | grep -A 10 '"NetworkSettings"'\
+
+: 1790451819:0;docker inspect practica1 | grep -E '"IPAddress"|"Gateway"'\
+
+: 1790452005:0;docker stop practica\
+
+: 1790452012:0;docker stop practica1\
+
+: 1790452025:0;docker rmi ubuntu:20.04\
+
+: 1790452038:0;docker ls
+: 1790452048:0;docker ps
+: 1790452093:0;docker stop practica1\
+
+: 1790452113:0;docker rmi ubuntu:20.04\
+
+: 1790452170:0;docker rm practica1\
+
+: 1790452184:0;docker ps -a\
+
+: 1790452210:0;docker rm practica\
+
+: 1790452226:0;docker rmi ubuntu:20.04\
+
+: 1790452293:0;docker images\
+
+: 1790452329:0;docker run -d --name practica1-db mysql:latest\
+
+: 1790452355:0;docker run -d --name practica-db mysql:latest\
+
+: 1790452384:0;docker ps -a\
+
+: 1790452416:0;docker images 
+: 1790452458:0;docker logs practica-db\
+
+: 1790452717:0;docker ps -a
+: 1790453039:0;cd ~/labs-luisf\
+
+: 1790453053:0;ls -la\
+
+: 1790453076:0;find . -maxdepth 2 -type f\
+
+: 1790453147:0;labs-luisf git:(main) âƒ¼ƒ· find . -maxdepth 2 -type f\
+\
+âƒ¾ƒ¼  labs-luisf git:(main) âƒ¼ƒ· 
+: 1790453171:0;ls -la "Practica#1"\
+
+: 1790453235:0;ls -la "Practica#2"\
+
+: 1790453263:0;cd "Practica#2/getting-started"\
+
+: 1790453268:0;ls -la "Practica#2"\
+
+: 1790453276:0;ls -la \
+
+: 1790453329:0;find . -maxdepth 3 -type f\
+
+: 1790453479:0;git remote -v\
+
+: 1790456080:0;cd ~/labs-luisf\
+
+: 1790456084:0;pwd
+: 1790456099:0;Practica#1\
+Practica#2\
+
+: 1790456124:0;ls
+: 1790456169:0;git init\
+
+: 1790456206:0;rm -rf "Practica#2/getting-started/.git"\
+
+: 1790456217:0;ls -la "Practica#2/getting-started"\
+
+: 1790456357:0;cd ..
+: 1790456361:0;ls
+: 1790456367:0;ls -la
+: 1790456394:0;ls -la "Practica#2/getting-started"\
+
+: 1790456429:0;pwd
+: 1790456529:0;git init\
+
+: 1790456576:0;git status\
+
+: 1790456636:0;git branch -M main\
+
+: 1790456643:0;git status
+: 1790456677:0;rm -rf "Practica#2/getting-started/.git"\
+
+: 1790456701:0;ls -la "Practica#2/getting-started"\
+
+: 1790456739:0;git status\
+
+: 1790456751:0;git add --dry-run .\
+
+: 1790456852:0;rm -rf "Practica#1/.git"\
+
+: 1790456860:0;ls -la "Practica#1"\
+
+: 1790456874:0;nano "Practica#1/README.md"\
+
+: 1790457036:0;cat "Practica#1/README.md"\
+
+: 1790457119:0;git status\
+
+: 1790457333:0;git add --dry-run .\
+
+: 1790457412:0;git add .\
+
+: 1790457419:0;git status\
+
+: 1790457479:0;git commit -m "Agrega practicas de Docker"\
+
+: 1790457552:0;git remote add origin https://github.com/COLLETO/docker-practicas.git\
+
+: 1790457569:0;git remote -v\
+
+: 1790458094:0;git push -u origin main\
+
+: 1790458405:0;git ls-remote origin\
+
+: 1790458435:0;cd ~/labs-luisf\
+
+: 1790458470:0;git ls-remote origin\
+
+: 1790458483:0;git config --global --get credential.helper\
+
+: 1790458500:0;git config --global --get user.email\
+
+: 1790458588:0;git config --global --get user.name\
+
+: 1790458594:0;git config --local --get user.name\
+
+: 1790458742:0;git config --local user.name "COLLETO"\
+
+: 1790458753:0;git config --local user.email "colle5120@gmail.com"\
+
+: 1790458760:0;git config --local --get user.name\
+git config --local --get user.email\
+
+: 1790458774:0;git log --oneline -1\
+
+: 1790459347:0;âƒ¾ƒ¼  labs-luisf git:(main) âƒ¼ƒ·\
+
+: 1790459442:0;(main) âƒ¼ƒ·
+: 1790459473:0;git config --local --get user.name\
+
+: 1790459495:0;git config --local --get user.email\
+
+: 1790459511:0;git remote -v\
+
+: 1790459548:0;git push -u origin main\
+
+: 1790459781:0;GIT_TERMINAL_PROMPT=1 git push -u origin main\
+
+: 1790459822:0;git config --show-origin --get-all credential.helper\
+
+: 1790460183:0;âƒ¾ƒ¼ labs-luisf git:(main) âƒ¼ƒ·\
+
+: 1790460335:0;GIT_TRACE=1 GIT_CURL_VERBOSE=1 git push -u origin main\
+
+: 1790460407:0;GIT_ASKPASS= GIT_TERMINAL_PROMPT=1 git push -u origin main\
+
+: 1790460455:0;GIT_TRACE=1 GIT_CURL_VERBOSE=1 git push -u origin main\
+
+: 1790460476:0;Username for 'https://github.com':\
+
+: 1790460508:0;GIT_ASKPASS= GIT_TERMINAL_PROMPT=1 git push -u origin main\
+
+: 1790463534:0;git credential reject\
+
+: 1790463580:0;GIT_ASKPASS= GIT_TERMINAL_PROMPT=1 git push -u origin main\
+
+: 1790650904:0;git remote -v
+: 1790651285:0;pwd
+: 1790651288:0;ls
+: 1790651296:0;cd labs-luisf
+: 1790651309:0;ls -la ~/.ssh
+: 1790651350:0;ssh -T git@github.com
+: 1790651760:0;ssh-keygen -t ed25519 -C "colle5120@gmail.com"
+: 1790652135:0;ls -la ~/.ssh
+: 1790652205:0;cat ~/.ssh/id_ed25519_colleto.pub
+: 1790652507:0;nano ~/.ssh/config
+: 1790652669:0;cat ~/.ssh/config
+: 1790652683:0;ssh -T git@github-colleto
+: 1790653614:0;git remote set-url origin git@github-colleto:COLLETO/docker-practicas.git
+: 1790653624:0;git remote -v
+: 1790653689:0;git status
+: 1790653752:0;git push
+: 1790727209:0;docker compose version
+: 1790727663:0;sudo curl -SL https://github.com/docker/compose/releases/download/v2.26.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose\
+\
+sudo chmod +x /usr/local/bin/docker-compose\
+\
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+: 1790727683:0;docker compose version
+: 1790728509:0;version: '3.7'\
+services:\
+  dockerlabs:\
+    container_name: dockerlabs\
+    image: dockerlabs:version_compose\
+    build:\
+      dockerfile: /stage.dockerfile\
+      context: .
+: 1790728765:0;docker compose version
+: 1790728813:0;docker images\
+docker compose up
+: 1790730465:0;docker compose build
+: 1790730501:0;docker images\
+docker compose up
+: 1790730556:0;cd ..
+: 1790730558:0;ls
+: 1790730562:0;cd dockerlabs
+: 1790730565:0;ls
+: 1790730609:0;cd labs
+: 1790730621:0;dockerfile: ./stage.dockerfile
+: 1790730637:0;docker compose build
+: 1790730663:0;docker images\
+docker compose up
+: 1790730708:0;ports:\
+  - 8080:8080
+: 1790730729:0;docker compose up -d
+: 1790731258:0;pwd
+: 1790731280:0;ls -la\
+
+: 1790731302:0;cat -n docker-compose.yml\
+
+: 1790731356:0;cat > docker-compose.yml <<'EOF'\
+version: '3.7'\
+\
+services:\
+  dockerlabs:\
+    container_name: dockerlabs\
+    image: dockerlabs:version_compose\
+    build:\
+      dockerfile: ./stage.dockerfile\
+      context: .\
+    ports:\
+      - "8080:8080"\
+EOF\
+
+: 1790731363:0;cat -n docker-compose.yml\
+
+: 1790731398:0;docker compose up -d
+: 1790731488:0;mkdir -p nginx\
+cp nginx.conf nginx/nginx.conf\
+
+: 1790731498:0;ls -l nginx/\
+
+: 1790731506:0;nginx.conf\
+
+: 1790731550:0;mkdir -p nginx\
+cp nginx.conf nginx/nginx.conf\
+
+: 1790731557:0;ls -l nginx/\
+
+: 1790731586:0;docker compose build\
+
+: 1790732110:0;docker images
+: 1790732861:0;docker ps
+: 1790733296:0;docker-compose down
+: 1790733856:0;docker compose config\
+
+: 1790733916:0;docker compose build
+: 1790733984:0;docker compose config\
+
+: 1790733989:0;docker compose build
+: 1790734203:0;docker compose config\
+
+: 1790734323:0;docker compose build
+: 1790734991:0;docker compose
+: 1790735000:0;docker config
+: 1790735058:0;docker compose up  --build -d
+: 1790735150:0;docker compose config\
+
+: 1790735179:0;cat -n docker-compose.yml\
+
+: 1790735408:0;docker compose config\
+
+: 1790735489:0;cat -n docker-compose.yml\
+
+: 1790735619:0;docker compose config
+: 1790735762:0;docker compose build
+: 1790735813:0;docker compose ps
+: 1790735865:0;docker compose logs
+: 1790735882:0;docker compose up  --build -d
+: 1790736083:0;volumes:\
+  - ./dockerfiles_demo/compose-loadbalancer.conf:/etc/nginx/conf.d/default.conf:ro\
+
+: 1790736119:0;ls -la dockerfiles_demo/\
+
+: 1790736254:0;docker compose up  --build -d
+: 1790736426:0;docker compose config
+: 1790736431:0;docker compose up  --build -d
+: 1790736448:0;docker ps
+: 1790736465:0;compose down
+: 1790736482:0;docker compose down
+: 1790736502:0;docker compose ps
+: 1790736541:0;docker compose down\
+\
+docker compose up -d --scale multidocker=3
+: 1790736567:0;dockr ps 
+: 1790736570:0;docker
+: 1790736576:0;docker ps
+: 1790736604:0;docker rm 3a2caf839c8f 
+: 1790736611:0;docker rm -3a2caf839c8f 
+: 1790736627:0;docker rm todo-container
+: 1790736647:0;docker stop todo-container
+: 1790736651:0;docker rm todo-container
+: 1790736733:0;docker ps
+: 1790736764:0;ping 207.231.108.76:8080
+: 1790736868:0;docker compose ps
+: 1790736923:0;watch docker compose ps\
+docker compose logs -f
+: 1790737790:0;docker compose ps
+: 1790737906:0;docker compose up
+: 1790737990:0;docker compose up -d --scale multidocker=3
+: 1790738049:0;docker compose ps 
+: 1790738076:0;docker compose logs
+: 1790738174:0;clear
+: 1790738178:0;docker ps
+: 1790738231:0;docker compose down
+: 1790738250:0;docker compose up -d --scale multidocker=3
+: 1790738292:0;docker compose up -- build
+: 1790738318:0;docker compose up --build
+: 1790738585:0;cd  ..
+: 1790738588:0;pwd
+: 1790738591:0;ls
+: 1790738598:0;cd monitoreo
+: 1790739474:0;docker compose up
+: 1790782025:0;cd ..
+: 1790782040:0;ls
+: 1790782047:0;cd labs-luisf
+: 1790782092:0;mkdir tarea3 
+: 1790782104:0;ls
+: 1790782133:0;rm tarea3
+: 1790782188:0;rm -r tarea3\
+
+: 1790782190:0;ls
+: 1790782207:0;mkdir Practica#3
+: 1790782209:0;ls
+: 1790782862:0;cd Practica\#3
+: 1790782864:0;ls
+cat docker-compose.yml
+docker compose up -d\
+
+docker compose ps\
+
+docker compose stop
+docker compose ps
+docker compose up -d\
+
+cat docker-compose.yml
+docker compose up -d\
+
+docker ps
+docker exec -it db-LUIS_FERNANDEZ mysql -u root -p\
+
+: 1790787927:0;exit
+docker compose restart
+: 1790788075:0;pwd
+: 1790788081:0;ls
+: 1790788086:0;cd Practica\#3
+: 1790788089:0;ls
+docker compose restart
+docker ps
+docker exec -it db-LUIS_FERNANDEZ mysql -u root -p\
+
+history | grep docker\
+
+history -i | grep docker\
+
+: 1790789407:0;echo $HISTFILE\
+
+: 1790789502:0;head -5 ~/.zsh_history\
+
+: 1790789555:0;awk -v t="$(date +%s)" -F'[:;]' '$2 >= t-10800 {print $3}' ~/.zsh_history > commands.txt\
+
+: 1790789575:0;cat commands.txt
+: 1790789663:0;awk -v t="$(date +%s)" '{\
+  split($0,a,"[:;]");\
+  if (a[2] >= t-10800 && ($0 ~ /docker|mysql/))\
+    sub(/^: [0-9]+:[0-9]+;/,"");\
+    print\
+}' ~/.zsh_history > commands.txt\
+
